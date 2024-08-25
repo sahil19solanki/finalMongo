@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class StudentDTO{
-    Integer studentId;
-    String studentName;
-    String studentDob;
-    List<Student> courseIds = new ArrayList<>();
-
+public class CourseDTO {
+    Integer courseId;
+    String courseName;
+    Integer courseFee;
+    List<Student> studentIds = new ArrayList<>();
 }

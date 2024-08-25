@@ -5,17 +5,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Document
 @Data
-public class Student implements Serializable {
+public class Course {
     @Id
-    Integer studentId;
-    String studentName;
-    String studentDob;
+    Integer courseId;
+    String courseName;
+    Integer courseFee;
     @DBRef
-    List<Integer> courseIds = new ArrayList<>();
+    List<Student> studentIds = new ArrayList<>();
 }

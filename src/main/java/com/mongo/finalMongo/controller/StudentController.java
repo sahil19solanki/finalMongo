@@ -27,11 +27,11 @@ public class StudentController {
         boolean isRegistered = studentService.addOrUpdateStudent(studentDTO, designation);
 
         if (isRegistered) {
-            log.info("Registration successful");
+            log.info("Student added successful");
             return ApiResponse.success(new ResponseEntity<>(studentDTO, HttpStatus.CREATED));
         } else {
-            log.info("Registration failed");
-            return ApiResponse.failure("REGISTRATION_FAILED", "Failed to register student.");
+            log.info("Student addition failed");
+            return ApiResponse.failure("ADDITION_FAILED", "Failed to register student.");
         }
     }
     
@@ -45,7 +45,7 @@ public class StudentController {
             return ApiResponse.success(new ResponseEntity<>(true, HttpStatus.CREATED));
         } else {
             log.info("delete failed");
-            return ApiResponse.failure("REGISTRATION_FAILED", "Failed to register student.");
+            return ApiResponse.failure("DELETION_FAILED", "Failed to delete student.");
         }
     }
 }
